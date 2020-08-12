@@ -407,6 +407,11 @@ export enum ProductOrderField {
   TYPE = "TYPE",
 }
 
+export enum StockAvailability {
+  IN_STOCK = "IN_STOCK",
+  OUT_OF_STOCK = "OUT_OF_STOCK",
+}
+
 export interface AccountInput {
   firstName?: string | null;
   lastName?: string | null;
@@ -457,6 +462,11 @@ export interface CollectionSortingInput {
   field: CollectionSortField;
 }
 
+export interface IntRangeInput {
+  gte?: number | null;
+  lte?: number | null;
+}
+
 export interface PaymentInput {
   gateway: string;
   token: string;
@@ -464,10 +474,35 @@ export interface PaymentInput {
   billingAddress?: AddressInput | null;
 }
 
+export interface PriceRangeInput {
+  gte?: number | null;
+  lte?: number | null;
+}
+
+export interface ProductFilterInput {
+  isPublished?: boolean | null;
+  collections?: (string | null)[] | null;
+  categories?: (string | null)[] | null;
+  hasCategory?: boolean | null;
+  attributes?: (AttributeInput | null)[] | null;
+  stockAvailability?: StockAvailability | null;
+  productType?: string | null;
+  stocks?: ProductStockFilterInput | null;
+  search?: string | null;
+  price?: PriceRangeInput | null;
+  minimalPrice?: PriceRangeInput | null;
+  productTypes?: (string | null)[] | null;
+}
+
 export interface ProductOrder {
   direction: OrderDirection;
   attributeId?: string | null;
   field?: ProductOrderField | null;
+}
+
+export interface ProductStockFilterInput {
+  warehouseIds?: string[] | null;
+  quantity?: IntRangeInput | null;
 }
 
 //==============================================================
