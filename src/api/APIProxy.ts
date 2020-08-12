@@ -69,8 +69,6 @@ class APIProxy {
     data => data.product
   );
 
-  getProductList = this.watchQuery(QUERIES.ProductList, data => data.products);
-
   getCategoryDetails = this.watchQuery(
     QUERIES.CategoryDetails,
     data => data.category
