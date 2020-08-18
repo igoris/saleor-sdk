@@ -123,6 +123,7 @@ class CheckoutJobs {
 
     this.localStorageHandler.setCheckout({
       ...checkout,
+      availablePaymentGateways: data?.availablePaymentGateways,
       billingAsShipping: false,
       email: data?.email,
       selectedShippingAddressId,
@@ -155,6 +156,7 @@ class CheckoutJobs {
 
     this.localStorageHandler.setCheckout({
       ...checkout,
+      availablePaymentGateways: data?.availablePaymentGateways,
       billingAddress: data?.billingAddress,
       billingAsShipping: !!billingAsShipping,
       selectedBillingAddressId,
@@ -190,6 +192,7 @@ class CheckoutJobs {
 
     this.localStorageHandler.setCheckout({
       ...checkout,
+      availablePaymentGateways: data?.availablePaymentGateways,
       billingAddress: data?.billingAddress,
       billingAsShipping: false,
       email: data?.email,
@@ -220,6 +223,7 @@ class CheckoutJobs {
 
     this.localStorageHandler.setCheckout({
       ...checkout,
+      availablePaymentGateways: data?.availablePaymentGateways,
       promoCodeDiscount: data?.promoCodeDiscount,
       shippingMethod: data?.shippingMethod,
     });
@@ -248,6 +252,7 @@ class CheckoutJobs {
 
     this.localStorageHandler.setCheckout({
       ...checkout,
+      availablePaymentGateways: data?.availablePaymentGateways,
       promoCodeDiscount: data?.promoCodeDiscount,
     });
     return { data };
@@ -275,6 +280,7 @@ class CheckoutJobs {
 
     this.localStorageHandler.setCheckout({
       ...checkout,
+      availablePaymentGateways: data?.availablePaymentGateways,
       promoCodeDiscount: data?.promoCodeDiscount,
     });
     return { data };
